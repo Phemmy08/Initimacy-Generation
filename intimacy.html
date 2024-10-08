@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Intimacy Generation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="download.jpeg" type="x-icon">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h2>Sign Up</h2>
+            <p>Create an account to join our community.</p>
+            <form id="signup-form" action="/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a Password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+
+                <script>
+                    const form = document.getElementById('signup-form');
+                    form.addEventListener('submit', (e) => {
+                        const password = document.getElementById('password').value;
+                        const confirmPassword = document.getElementById('confirm-password').value;
+                
+                        if (password !== confirmPassword) {
+                            alert('Passwords do not match!');
+                            e.preventDefault();  // Prevent the form from submitting
+                        }
+                    });
+                </script>
+                
+            </form>
+        </div>
+    </div>
+</body>
+<footer>
+    Copyright &copy; Intimacy Generation Team
+</footer>
+</html>
